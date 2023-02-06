@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <title>Encriptador</title>
     <link rel="stylesheet" href="./style.css">
-    
+
 </head>
 
 <body>
@@ -15,46 +15,40 @@
         <img src="./imagenes/Logo.png" alt="LOGO ALURA" class="logo">
     </header>
 
-
-
     <main>
-
-
-
-
-
         <section>
-            <textarea class="text-area" id="mensajeIngresado" cols="30" rows="6" placeholder="Ingrese el texto aqui"></textarea>
-            <div>
-                <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
+
+            <div class="contenedorIngreseMsj">
+                <textarea class="textAreaMsjIngresado" id="mensajeIngresado" cols="25" rows="6"
+                    placeholder="Ingrese el texto a encriptar aqui" autofocus></textarea>
+                <div class="cajaInformacion">
+                    <h6 class="informacion">*Solo letras minúsculas y sin acentos</h6>
+                </div>
+                <div class="cajaBtons">
+                    <button class="btn-encriptar" id="btnEncriptar">Encriptar</button>
+                    <button class="btn-desencriptar" id="btnDesencriptar">Desencriptar</button>
+                </div>
+
             </div>
-            <div class="botones">
-                <button class="btn-encriptar" id="btnEncriptar">Encriptar</button>
-                <button class="btn-desencriptar">Desencriptar</button>
+
+            <div class="contenedorMsjEncriptado">
+                <textarea class="textAreaMsnEncriptado" id="mensajeEscondido" cols="25" rows="6">
+                </textarea>
+
+                <button class="btn-copiar" id="btn-copiar">Copiar</button>
             </div>
+
         </section>
-
-        <section>
-            <textarea class="mensaje" id="mensajeEscondido" cols="20" rows="10">  </textarea>
-           <!--  <div>
-                <button class="btn-copiar">Copiar</button>
-            </div> -->
-        </section>
-
-
-
-
-
     </main>
 
 
-
-
-
+    <footer>
+        <p>Made by Leonel Di giorgio</p>
+    </footer>
 
     <script src="./script.js"></script>
-
-    
 </body>
 
 </html>
+
+

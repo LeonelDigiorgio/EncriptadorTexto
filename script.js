@@ -1,99 +1,62 @@
+function clase() {
+    mensajeEscondido.classList.remove("textAreaMsnEncriptado")
+    mensajeEscondido.classList.add("mensaje2")
+}
+
 let btnEncriptar = document.getElementById("btnEncriptar")
 btnEncriptar.addEventListener("click", encriptar)
 
+let btnDesencriptar = document.getElementById("btnDesencriptar")
+btnDesencriptar.addEventListener("click", desencriptar)
 
-function encriptar() {
-    let mensajeIngresado = document.getElementById("mensajeIngresado")
-    let mensajeEscondido = document.getElementById("mensajeEscondido")
-    let resultado;
+let btnCopiar = document.getElementById("btn-copiar");
+btnCopiar.addEventListener("click", copiar)
 
-    while (mensajeIngresado.value.includes("a")) {
-        resultado = mensajeIngresado.value.replace("a", "ai")
-        mensajeEscondido.innerText = resultado;
-
-        mensajeEscondido.classList.remove("mensaje")
-        mensajeEscondido.classList.add("mensaje2")
-        console.console.log("Hola mundo");
-
-    }
+function desabilitarBtnDesencriptar() {
+    btnDesencriptar.disabled = true;
 }
 
-/* if (mensajeIngresado.value.includes("a")) {
-    resultado = mensajeIngresado.value.replace("a", "ai")
-    mensajeEscondido.innerText = resultado;
 
-    mensajeEscondido.classList.remove("mensaje")
-    mensajeEscondido.classList.add("mensaje2")
+
+
+function encriptar(e) {
+    let mensajeIngresado = document.getElementById("mensajeIngresado");
+
+    const nuevoStr = mensajeIngresado.value.replaceAll("a", "ai");
+    const nuevoStr2 = nuevoStr.replaceAll("e", "enter");
+    const nuevoStr3 = nuevoStr2.replaceAll("i", "imes");
+    const nuevoStr4 = nuevoStr3.replaceAll("o", "ober");
+    const nuevoStr5 = nuevoStr4.replaceAll("u", "ufat");
+
+    mensajeEscondido.innerText = nuevoStr5;
+
+    clase()
 }
-else if (mensajeIngresado.value.includes("e")) {
-    resultado = mensajeIngresado.value.replace("e", "enter")
-    mensajeEscondido.innerText = resultado;
 
-    mensajeEscondido.classList.remove("mensaje")
-    mensajeEscondido.classList.add("mensaje2")
+
+function desencriptar() {
+    let mensajeIngresado = document.getElementById("mensajeIngresado");
+
+    const nuevoStr = mensajeIngresado.value.replaceAll("ufat", "u");
+    const nuevoStr2 = nuevoStr.replaceAll("ober", "o");
+    const nuevoStr3 = nuevoStr2.replaceAll("imes", "i");
+    const nuevoStr4 = nuevoStr3.replaceAll("enter", "e");
+    const nuevoStr5 = nuevoStr4.replaceAll("ai", "a");
+
+    mensajeEscondido.innerText = nuevoStr5;
+
+    clase()
 }
-else if (mensajeIngresado.value.includes("i")) {
-    resultado = mensajeIngresado.value.replace("i", "imes")
-    mensajeEscondido.innerText = resultado;
 
-    mensajeEscondido.classList.remove("mensaje")
-    mensajeEscondido.classList.add("mensaje2")
+function copiar() {
+    let codigoACopiar = document.getElementById("mensajeEscondido");
+    let seleccion = document.createRange();
+    seleccion.selectNodeContents(codigoACopiar);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(seleccion);
+    let res = document.execCommand('copy');
+    window.getSelection().removeRange(seleccion);
+    window.location.reload()
+    alert("Pegue su texto copiado en el encriptador !")
 }
-else if (mensajeIngresado.value.includes("o")) {
-    resultado = mensajeIngresado.value.replace("o", "ober")
-    mensajeEscondido.innerText = resultado;
-
-    mensajeEscondido.classList.remove("mensaje")
-    mensajeEscondido.classList.add("mensaje2")
-}
-else if (mensajeIngresado.value.includes("u")) {
-    resultado = mensajeIngresado.value.replace("u", "ufat")
-    mensajeEscondido.innerText = resultado;
-
-    mensajeEscondido.classList.remove("mensaje")
-    mensajeEscondido.classList.add("mensaje2")
-} */
-
-
-
-
-
-/* for (let i = 0; i < mensajeIngresado.value.length) {
-     let resultado = mensajeIngresado; 
- 
-     if (mensajeIngresado.value.includes("a")) {
-         resultado = mensajeIngresado.value.replace("a", "ai")
-         mensajeEscondido.innerText = resultado;
- 
-         mensajeEscondido.classList.remove("mensaje")
-         mensajeEscondido.classList.add("mensaje2")
-     }
-     else if (mensajeIngresado.value.includes("e")) {
-         resultado = mensajeIngresado.value.replace("e", "enter")
-         mensajeEscondido.innerText = resultado;
- 
-         mensajeEscondido.classList.remove("mensaje")
-         mensajeEscondido.classList.add("mensaje2")
-     }
-     else if (mensajeIngresado.value.includes("i")) {
-         resultado = mensajeIngresado.value.replace("i", "imes")
-         mensajeEscondido.innerText = resultado;
- 
-         mensajeEscondido.classList.remove("mensaje")
-         mensajeEscondido.classList.add("mensaje2")
-     }
-     else if (mensajeIngresado.value.includes("o")) {
-         resultado = mensajeIngresado.value.replace("o", "ober")
-         mensajeEscondido.innerText = resultado;
- 
-         mensajeEscondido.classList.remove("mensaje")
-         mensajeEscondido.classList.add("mensaje2")
-     }
-     else if (mensajeIngresado.value.includes("u")) {
-         resultado = mensajeIngresado.value.replace("u", "ufat")
-         mensajeEscondido.innerText = resultado;
- 
-         mensajeEscondido.classList.remove("mensaje")
-         mensajeEscondido.classList.add("mensaje2")
-     }*/
 
